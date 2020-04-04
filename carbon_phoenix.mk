@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/phoenix/device.mk)
 
 # Inherit GApps
-$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
 
 # Inherit some common carbon stuff.
 $(call inherit-product, vendor/carbon/config/common.mk)
@@ -23,6 +23,8 @@ PRODUCT_DEVICE := phoenix
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi K30
 PRODUCT_MANUFACTURER := Xiaomi
+
+BUILD_FINGERPRINT := POCO/phoenixin/phoenixin:10/QKQ1.190825.002/V11.0.6.0.QGHINXM:user/release-keys
 
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
