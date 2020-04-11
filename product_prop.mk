@@ -26,3 +26,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1 \
     ro.sf.blurs_are_expensive=1
+
+# Wireless display
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.latch_unsignaled=1 \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
