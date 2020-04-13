@@ -27,11 +27,7 @@
    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
-#include <fstream>
-#include <unistd.h>
-#include <vector>
-
+#include <android-base/logging.h>
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
@@ -39,62 +35,44 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-using android::base::GetProperty;
 using android::init::property_set;
 
-std::vector<std::string> ro_props_default_source_order = {
-    "",
-    "odm.",
-    "product.",
-    "system.",
-    "vendor.",
-};
-
-void property_override(char const prop[], char const value[], bool add = true) {
+void property_override(char const prop[], char const value[])
+{
     prop_info *pi;
 
-    pi = (prop_info *)__system_property_find(prop);
+    pi = (prop_info*) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
-    else if (add)
+    else
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
+void load_phoenixin() {
+    property_override("ro.product.model", "Poco X2");
+    property_override("ro.build.product", "phoenixin");
+    property_override("ro.product.device", "phoenixin");
+}
+
+void load_phoenix() {
+    property_override("ro.product.model", "Redmi K30");
+    property_override("ro.build.product", "phoenix");
+    property_override("ro.product.device", "phoenix");
+}
+
 
 void vendor_load_properties() {
-    const auto set_ro_build_prop = [](const std::string &source,
-                                      const std::string &prop,
-                                      const std::string &value) {
-        auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
+    std::string region = android::base::GetProperty("ro.boot.hwc", "");
 
-    const auto set_ro_product_prop = [](const std::string &source,
-                                        const std::string &prop,
-                                        const std::string &value) {
-        auto prop_name = "ro.product." + source + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
-
-    std::string region;
-    region = GetProperty("ro.boot.hwc", "");
-
-    if (region == "CN") {
-        for (const auto &source : ro_props_default_source_order) {
-            set_ro_build_prop(source, "fingerprint",
-                               "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-            set_ro_product_prop(source, "brand", "Redmi");
-            set_ro_product_prop(source, "device", "phoenix");
-            set_ro_product_prop(source, "model", "Redmi K30");
-        }
-        property_override("ro.build.description", "phoenix-user 10 QKQ1.190825.002 V11.0.9.0.QGHCNXM release-keys");
-    } else if (region == "INDIA") {
-        for (const auto &source : ro_props_default_source_order) {
-            set_ro_build_prop(source, "fingerprint",
-                              "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-            set_ro_product_prop(source, "brand", "POCO");
-            set_ro_product_prop(source, "device", "phoenixin");
-            set_ro_product_prop(source, "model", "POCO X2");
-        }
-        property_override("ro.build.description", "phoenixin-user 10 QKQ1.190825.002 V11.0.6.0.QGHINXM release-keys");
+    if (region.find("CN") != std::string::npos) {
+        load_phoenix();
+    } else if (region.find("INDIA") != std::string::npos) {
+        load_phoenixin();
+    } else {
+        LOG(ERROR) << __func__ << ": unexcepted region!";
     }
+
+    property_override("ro.oem_unlock_supported", "0");
+    property_override("ro.apex.updatable", "true");
+    property_override("ro.control_privapp_permissions", "log");
+    property_override("vendor.display.disable_hw_recovery_dump", "0");
 }

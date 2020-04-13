@@ -125,6 +125,9 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
+# Vendor Security Patch
+VENDOR_SECURITY_PATCH := 2020-03-01
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag

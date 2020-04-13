@@ -24,7 +24,13 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi K30
 PRODUCT_MANUFACTURER := Xiaomi
 
-BUILD_FINGERPRINT := POCO/phoenixin/phoenixin:10/QKQ1.190825.002/V11.0.6.0.QGHINXM:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="phoenixin-user 10 QKQ1.190825.002 V11.0.6.0.QGHINXM release-keys"
+
+BUILD_FINGERPRINT := "POCO/phoenixin/phoenixin:10/QKQ1.190825.002/V11.0.6.0.QGHINXM:user/release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=POCO/phoenixin/phoenixin:10/QKQ1.190825.002/V11.0.6.0.QGHINXM:user/release-keys
 
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
