@@ -139,6 +139,10 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
+# WiFi
+PRODUCT_PACKAGES += \
+    WifiOverlay
+
 # Binder
 PRODUCT_PACKAGES += \
     libhwbinder \
