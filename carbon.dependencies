@@ -10,5 +10,11 @@
   {
     "repository":  "CarbonROM/android_hardware_xiaomi",
     "target_path": "hardware/xiaomi"
+  },
+  {
+   "remote"       : "gh",
+   "repository"   : "LineageOS/android_packages_resources_devicesettings",
+   "target_path"  : "packages/resources/devicesettings",
+   "revision"     : "lineage-17.1"
   }
 ]
