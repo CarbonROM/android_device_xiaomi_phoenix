@@ -34,6 +34,7 @@ vendor/lib64/hw/audio.primary.sm6150.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
+vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libaudioroute_ext.so
@@ -43,6 +44,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
+vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libaudioroute_ext.so
@@ -94,6 +96,14 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 
+# Consumer IR
+vendor/bin/hw/android.hardware.ir@1.0-service
+vendor/lib64/hw/android.hardware.ir@1.0-impl.so
+vendor/lib64/hw/consumerir.default.so
+vendor/lib/hw/android.hardware.ir@1.0-impl.so
+vendor/lib/hw/consumerir.default.so
+vendor/etc/init/android.hardware.ir@1.0-service.rc
+
 # Camera
 vendor/etc/camera/CFR_para_UW_src1.bin
 vendor/etc/camera/CFR_para_UW_src2.bin
@@ -117,7 +127,6 @@ vendor/etc/camera/hdr_ui9_params.config
 vendor/etc/camera/lf_facerank_model.bin
 vendor/etc/camera/male_bg.png
 vendor/etc/camera/male_icon.png
-vendor/etc/camera/megviifacepp_0_5_2_model
 vendor/etc/camera/morpho_lowlight4.0_3hdr_algoup.xml
 vendor/etc/camera/morpho_lowlight4.0_adrc_high_1_algoup.xml
 vendor/etc/camera/morpho_lowlight4.0_adrc_high_algoup.xml
@@ -326,7 +335,8 @@ vendor/lib64/camera.device@3.4-external-impl.so
 vendor/lib64/camera.device@3.4-impl.so
 vendor/lib64/camera.device@3.5-external-impl.so
 vendor/lib64/camera.device@3.5-impl.so
-vendor/lib64/hw/android.hardware.camera.provider@2.4
+vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
+vendor/lib64/vendor.qti.hardware.camera.device@1.0.so
 vendor/lib/android.hardware.camera.provider@2.4-external.so
 vendor/lib/android.hardware.camera.provider@2.4-legacy.so
 vendor/lib/camera.device@1.0-impl.so
