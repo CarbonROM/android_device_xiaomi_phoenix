@@ -141,6 +141,7 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # WiFi
 PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
     WifiOverlay
 
 # Binder
