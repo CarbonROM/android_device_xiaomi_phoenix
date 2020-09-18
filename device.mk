@@ -139,3 +139,8 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
+# Binder
+PRODUCT_PACKAGES += \
+    libhwbinder \
+    libhwbinder.vendor \
+    libhidltransport
