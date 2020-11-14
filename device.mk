@@ -53,8 +53,8 @@ PRODUCT_PACKAGES += \
     BluetoothQti
 
 # Camera
-PRODUCT_PACKAGES += \
-    Snap
+#PRODUCT_PACKAGES += \
+#    Snap
 
 # Device Settings
 PRODUCT_PACKAGES += \
@@ -98,8 +98,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosip
+    $(LOCAL_PATH)/overlay
 
 # Overlays - override vendor ones
 PRODUCT_PACKAGES += \
