@@ -1,4 +1,4 @@
-# Bluetooth
+# Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bt.a2dp.aac_whitelist=false \
     persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac \
