@@ -55,8 +55,8 @@ PRODUCT_PACKAGES += \
     BluetoothQti
 
 # Camera
-#PRODUCT_PACKAGES += \
-#    Snap
+PRODUCT_PACKAGES += \
+    Snap
 
 # Device Settings
 PRODUCT_PACKAGES += \
