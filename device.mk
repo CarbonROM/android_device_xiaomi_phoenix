@@ -121,6 +121,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.phoenix
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    android.frameworks.sensorservice@1.0 
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
