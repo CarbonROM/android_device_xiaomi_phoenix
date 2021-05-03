@@ -3,13 +3,6 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# ADB
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.debuggable=1 \
-    ro.secure=0 \
-    ro.adb.secure=0
-
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.camera.gyro.disable=0 \
