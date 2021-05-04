@@ -7,3 +7,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.btstack.enable.twsplussho=true \
     ro.bluetooth.library_name=libbluetooth_qti.so \
     vendor.bluetooth.soc=cherokee
+
+#Netflix custom property
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.netflix.bsp_rev=Q6150-17263-1
+
+# Set stock DPI
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.lcd_density=440
