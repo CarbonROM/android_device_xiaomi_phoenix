@@ -1,12 +1,9 @@
 /**
  * Copyright (C) 2020 The LineageOS Project
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -81,7 +78,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.thermal_layout, container, false);
     }
 
@@ -244,7 +241,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
                 R.string.thermal_benchmark,
                 R.string.thermal_camera,
                 R.string.thermal_dialer,
-                R.string.thermal_gaming,
+                R.string.thermal_gaming
         };
 
         private ModeAdapter(Context context) {
@@ -354,7 +351,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
         }
 
         private void setEntries(List<ApplicationsState.AppEntry> entries,
-                List<String> sections, List<Integer> positions) {
+                                List<String> sections, List<Integer> positions) {
             mEntries = entries;
             mSections = sections.toArray(new String[sections.size()]);
             mPositions = new int[positions.size()];

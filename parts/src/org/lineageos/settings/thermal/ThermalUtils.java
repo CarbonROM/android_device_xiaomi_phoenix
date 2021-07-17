@@ -27,14 +27,13 @@ import org.lineageos.settings.utils.FileUtils;
 
 public final class ThermalUtils {
 
-    private static final String THERMAL_CONTROL = "thermal_control";
-
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_BENCHMARK = 1;
     protected static final int STATE_CAMERA = 2;
     protected static final int STATE_DIALER = 3;
     protected static final int STATE_GAMING = 4;
 
+    private static final String THERMAL_CONTROL = "thermal_control";
     private static final String THERMAL_STATE_DEFAULT = "0";
     private static final String THERMAL_STATE_BENCHMARK = "10";
     private static final String THERMAL_STATE_CAMERA = "12";
@@ -115,6 +114,10 @@ public final class ThermalUtils {
         }
 
         return state;
+    }
+
+    protected void setDefaultThermalProfile() {
+        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
     }
 
     protected void setThermalProfile(String packageName) {
