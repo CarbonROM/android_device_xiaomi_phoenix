@@ -1,0 +1,12 @@
+[
+  {
+    "repository":  "CarbonROM/android_kernel_xiaomi_sm6150",
+    "target_path": "kernel/xiaomi/sm6150"
+  },
+  {
+   "remote"       : "gh",
+   "repository"   : "LineageOS/android_packages_resources_devicesettings",
+   "target_path"  : "packages/resources/devicesettings",
+   "revision"     : "lineage-18.1"
+  }
+]
