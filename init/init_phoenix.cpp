@@ -60,13 +60,13 @@ constexpr const char *DEVICES[] = {
 };
 
 constexpr const char *BUILD_DESCRIPTION[] = {
-    "phoenixin-user 11 RKQ1.200826.002 V12.1.3.0.RGHINXM release-keys",
-    "phoenixin-user 11 RKQ1.200826.002 V12.1.3.0.RGHINXM release-keys",
+    "phoenixin-user 11 RKQ1.200826.002 V12.5.1.0.RGHINXM release-keys",
+    "phoenixin-user 11 RKQ1.200826.002 V12.5.1.0.RGHINXM release-keys",
 };
 
 constexpr const char *BUILD_FINGERPRINT[] = {
-    "POCO/phoenixin/phoenixin:11/RKQ1.200826.002/V12.1.3.0.RGHINXM:user/release-keys",
-    "POCO/phoenixin/phoenixin:11/RKQ1.200826.002/V12.1.3.0.RGHINXM:user/release-keys",
+    "POCO/phoenixin/phoenixin:11/RKQ1.200826.002/V12.5.1.0.RGHINXM:user/release-keys",
+    "POCO/phoenixin/phoenixin:11/RKQ1.200826.002/V12.5.1.0.RGHINXM:user/release-keys",
 };
 
 constexpr const char *CLIENT_ID[] = {
