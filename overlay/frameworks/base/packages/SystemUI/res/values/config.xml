@@ -25,4 +25,7 @@
 
     <!-- Show the network traffic monitor on sb-->
     <bool name="config_forceShowNetworkTrafficOnStatusBar">true</bool>
+
+    <!-- Limit internal screen recorder's framerate to 60 -->
+    <integer name="config_screenRecorderMaxFramerate">60</integer>
 </resources>
